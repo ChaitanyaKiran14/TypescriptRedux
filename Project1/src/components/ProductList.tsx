@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useDispatch } from 'react-redux';
+import { AppDispatch } from '../app/store';
 import { Product } from '../types/Product';
 import { setSelectedProduct } from '../features/productSlice';
-import { AppDispatch } from '../app/store';
+
 
 const ProductList: React.FC = () => {
   const [products, setProducts] = useState<Product[]>([]);
@@ -43,7 +44,7 @@ const ProductList: React.FC = () => {
           products.map((product) => (
             <li key={product.id} onClick={() => handleProductClick(product)}>
               {product.title} - ${product.price}
-            </li>
+            </  li>
           ))
         ) : (
           <div>No products available</div>
@@ -52,6 +53,7 @@ const ProductList: React.FC = () => {
     </div>
   );
 };
+
 
 export default ProductList;
 

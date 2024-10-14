@@ -9,6 +9,7 @@ const initialState: ProductState = {
   selectedProduct: null,
 };
 
+
 const productSlice = createSlice({
   name: 'product',
   initialState,
